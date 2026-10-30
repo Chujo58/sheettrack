@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sheettrack"
+version = "0.1.0"
+description = "Lightweight Google Sheets helpers for tracking pipeline/job status, one row per ID."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Chloé Legué", email = "chloe.legue@mail.mcgill.ca" }]
+keywords = ["google-sheets", "pipeline", "status-tracking", "gspread-alternative"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "google-api-python-client>=2.0",
+    "google-auth>=2.0",
+]
+
+[project.optional-dependencies]
+pandas = ["pandas>=1.5"]
+dev = ["pytest", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USER/sheettrack"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sheettrack"]
